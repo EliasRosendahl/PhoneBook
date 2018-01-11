@@ -19,7 +19,7 @@ void printContact(contact * c1){
 
 //populates the list of contacts
 void loadContact(contact * c1){
-    c1->name = "John\n";
+    c1->name = "john\n";
     c1->number = "2223\n";
     c1->next = malloc(sizeof(contact));
     c1->next->name = "doe\n";
@@ -50,21 +50,25 @@ void removeContact(contact * c1){
     printf("name of contact to remove: ");
     fgets(input, 7, stdin);
 
+
     //In case the name to be removed is first in the list
+    //No need to free tmp, as it is freed at the end of the function (maybe)
     if(strncmp(c1->name, input, 8) == 0){
-        contact * tmp = c1;
-        c1 = c1->next;
-        free(tmp);
+        *c1 = *c1->next;
         return;
     }
     do{
-        if(strncmp(c1->name, input, 8) == 0){
-            if(c1->next != NULL){
-                contact * tmp = c1->next;
+        if(strncmp(c1->next->name, input, 8) == 0){
+            if(c1->next->next != NULL){
                 c1->next = c1->next->next;
-                free(tmp);
+                return;
+            }
+            if(c1->next->next == NULL){
+                c1->next = NULL;
+                return;
             }
         }
+        c1 = c1->next;
 
     }while(c1->next != NULL);
 }

@@ -22,7 +22,9 @@ int main(){
         }
         if(strncmp(input, "2\n", 2) == 0){
             addContact(&c1);
-
+        }
+        if(strncmp(input, "3\n", 2) == 0){
+            removeContact(&c1);
         }
 
     }while (!strncmp(input, "0", 2) == 0);
