@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/elias/CLionProjects/PhoneBook/contacts.c
+stdio.h
+-
+stdlib.h
+-
+contacts.h
+/home/elias/CLionProjects/PhoneBook/contacts.h
+memory.h
+-
+
+/home/elias/CLionProjects/PhoneBook/contacts.h
+printf.h
+-
+
+/home/elias/CLionProjects/PhoneBook/main.c
+stdio.h
+-
+stdlib.h
+-
+memory.h
+-
+contacts.h
+/home/elias/CLionProjects/PhoneBook/contacts.h
+
