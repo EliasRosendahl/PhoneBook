@@ -55,20 +55,24 @@ void removeContact(contact * c1){
     //No need to free tmp, as it is freed at the end of the function (maybe)
     if(strncmp(c1->name, input, 8) == 0){
         *c1 = *c1->next;
+        printf("Contact Deleted\n");
         return;
     }
     do{
         if(strncmp(c1->next->name, input, 8) == 0){
             if(c1->next->next != NULL){
                 c1->next = c1->next->next;
+                printf("Contact Deleted\n");
                 return;
             }
             if(c1->next->next == NULL){
                 c1->next = NULL;
+                printf("Contact Deleted\n");
                 return;
             }
         }
         c1 = c1->next;
+        printf("Contact not found\n");
 
     }while(c1->next != NULL);
 }

@@ -12,7 +12,7 @@ int main(){
     char * input = malloc(20);
     printf("****PhoneBook Application****\n\n");
     do{
-        printf("1. List Contacts\n2. Add Contact\n");
+        printf("1. List Contacts\n2. Add Contact\n3. Delete Contact\n");
 
         //get user input and store in input
         fgets(input, 3, stdin);
